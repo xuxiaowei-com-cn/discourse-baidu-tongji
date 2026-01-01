@@ -6,10 +6,14 @@
 
 enabled_site_setting :baidu_tongji_enabled
 
-register_html_builder('server:before-head-close') do
+extend_content_security_policy(
+  script_src: %w[https://hm.baidu.com]
+)
+
+register_html_builder('server:before-head-close') do |controller|
   if SiteSetting.baidu_tongji_enabled && SiteSetting.baidu_tongji_site_id.present?
     <<~HTML
-    <script>
+    <script nonce="#{controller.helpers.csp_nonce_placeholder}">
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
