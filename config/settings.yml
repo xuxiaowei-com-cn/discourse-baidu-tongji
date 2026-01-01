@@ -1,0 +1,7 @@
+plugins:
+  baidu_tongji_enabled:
+    default: false
+    client: true
+  baidu_tongji_site_id:
+    default: ""
+    client: true
