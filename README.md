@@ -31,3 +31,7 @@
     1. 使用无痕浏览器测试
     2. 将域名添加到白名单
     3. 暂时关闭 AdGuard 重试
+
+## 联系我
+
+![wechat-work.jpg](static/wechat-work.jpg)
